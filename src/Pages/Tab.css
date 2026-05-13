@@ -1,56 +1,37 @@
-
-body.dark-mode {
-    background-color: #1a1a1a;
-    color: white;
-}
-
-.theme-toggle-container {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.theme-toggle-container::before {
-    content: '☀️';
-    font-size: 16px;
-    opacity: 0.8;
-}
-
-body.dark-mode .theme-toggle-container::before {
-    content: '';
-}
-
 .main-container {
     width: 100%;
     max-width: 1200px;
+    margin: 0 auto;
+    padding: 18px;
 }
 
 .dashboard-header {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     text-align: center;
 }
 
 .dashboard-header h1 {
     margin: 0;
-    font-size: 32px;
-    font-weight: 600;
+    font-size: 28px;
+    font-weight: 700;
+   
 }
 
-.toggle-section {
-    display: none;
+.dashboard-header h1 span {
+    color: #276749;
 }
 
-body.dark-mode .toggle-section {
-    background-color: #2a2a2a;
+.boddy {
+    background: #fafaf8;
+    min-height: 100vh;
+    color: #1a202c;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    padding: 28px 16px;
 }
+
 
 .dashboard {
-    padding: 20px;
-    padding-top: 0;
+    padding: 12px 0 36px 0;
 }
 
 .dashboard h2 {
@@ -65,24 +46,29 @@ body.dark-mode .toggle-section {
 }
 
 .card {
-    padding: 25px;
+    padding: 20px;
     border-radius: 12px;
-    background-color: #f9f9f9;
-    border: 1px solid #e0e0e0;
-    transition: .4s, transform 0.3s ease;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
     text-align: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 6px rgba(16, 24, 40, 0.04);
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
 }
 
 body.dark-mode .card {
-    background-color: #2a2a2a;
-    border: 1px solid #404040;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    background-color: #1f2937;
+    border: 1px solid #374151;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
 
 .card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(16, 24, 40, 0.08);
 }
 
 body.dark-mode .card:hover {
@@ -94,7 +80,7 @@ body.dark-mode .card:hover {
     padding: 8px 12px;
     border-radius: 8px;
     border: none;
-    background: #4a90e2;
+    background: #1a202c;
     color: white;
     cursor: pointer;
 }
@@ -104,17 +90,31 @@ body.dark-mode .card:hover {
 }
 
 .feature-panels {
-    margin-top: 30px;
-    display: grid;
-    grid-template-columns: 1fr;
+    margin-top: 28px;
+    display: flex;
+    flex-direction: row;
     gap: 16px;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 
 .panel {
     padding: 18px;
     border-radius: 10px;
     background: #ffffff;
-    border: 1px solid #e6e6e6;
+    border: 1px solid #e2e8f0;
+    flex-direction: row;
+    width: 48%;
+    box-shadow: 0 1px 4px rgba(16, 24, 40, 0.03);
+}
+.Finance-news {
+    padding: 18px;
+    border-radius: 10px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    flex-direction: row;
+    width: 48%;
+    box-shadow: 0 1px 4px rgba(16, 24, 40, 0.03);
 }
 
 .card-actions {
@@ -122,17 +122,11 @@ body.dark-mode .card:hover {
     gap: 10px;
     justify-content: center;
     align-items: center;
+    
+
 }
 
-.link-btn {
-    display: inline-block;
-    padding: 8px 12px;
-    border-radius: 8px;
-    background: transparent;
-    color: #4a90e2;
-    border: 1px solid #4a90e2;
-    text-decoration: none;
-}
+
 
 body.dark-mode .link-btn {
     color: #6ab7ff;
@@ -140,13 +134,13 @@ body.dark-mode .link-btn {
 }
 
 body.dark-mode .panel {
-    background: #222;
-    border-color: #333;
+    background: #0f172a;
+    border-color: #111827;
 }
 
 .subtitle {
     margin: 6px 0 0 0;
-    color: #666;
+    color: #718096;
 }
 
 .toast {
@@ -169,32 +163,24 @@ body.dark-mode .panel {
 }
 
 .card h3 {
-    margin: 0 0 15px 0;
+    margin: 0 0 8px 0;
     font-size: 18px;
+    color: #1a202c;
 }
 
-.stat-number {
-    margin: 10px 0;
-    font-size: 32px;
-    font-weight: bold;
-    color: #4a90e2;
-}
+
 
 body.dark-mode .stat-number {
     color: #6ab7ff;
 }
 
-.stat-label {
-    margin: 10px 0 0 0;
-    font-size: 12px;
-    opacity: 0.7;
-}
+
 
 .input {
     visibility: hidden;
 }
 
-.label {
+/*label {
     position: relative;
     width: 60px;
     height: 30px;
@@ -206,57 +192,10 @@ body.dark-mode .stat-number {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
     overflow: hidden;
 }
-
-body.dark-mode .label {
-    background-color: #404040;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-}
-
-.circle {
-    width: 24px;
-    background-color: white;
-    height: 24px;
-    border-radius: 50%;
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    animation: toggleOff .4s linear forwards;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-}
-
-.input:checked+label {
-    background-color: #4a90e2;
-}
-
-body.dark-mode .input:checked+label {
-    background-color: #6ab7ff;
-}
-
-.input:checked+.label .circle {
-    animation: toggleOn .4s linear forwards;
-    background-color: white;
-}
+*/
 
 
-@keyframes toggleOn {
-    0% {
-        transform: translateX(0);
-    }
 
-    100% {
-        transform: translateX(30px);
-    }
-}
-
-@keyframes toggleOff {
-    0% {
-        transform: translateX(30px);
-    }
-
-    100% {
-        transform: translateX(0);
-    }
-}
 
 /* my own edits*/
 img {
@@ -264,6 +203,47 @@ img {
     height: 24px;
     margin-right: 10px;
 }
-link{
+
+.link_btn {
     text-decoration: none;
+    /* removes underline */
+    color: inherit;
+    /* keeps your text color */
+    display: block;
+    /* makes whole card clickable */
+}
+
+/* Icon styling for FontAwesome icons inside .icons_tab */
+.icons_tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 6px 0;
+}
+
+.icons_tab svg {
+    font-size: 2.6rem;
+    color: #2b6cb0;
+    transition: transform .18s ease, color .18s ease;
+}
+
+/* Slight pop on card hover */
+.card:hover .icons_tab svg {
+    transform: scale(1.06);
+}
+
+/* Dark mode icon color */
+body.dark-mode .icons_tab svg {
+    color: #93c5fd;
+}
+
+/* Responsive tweaks */
+@media (max-width: 880px) {
+    .panel {
+        width: 100%;
+    }
+
+    .card-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
 }

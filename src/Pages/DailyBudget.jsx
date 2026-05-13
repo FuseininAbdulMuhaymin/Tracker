@@ -1,13 +1,15 @@
 import { useState } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faWallet } from '@fortawesome/free-solid-svg-icons'
 
 /* ============================================================
    COLORS & SHARED STYLES
    ============================================================ */
 const color = {
-  bg:       "#f7f9fc",
+  bg:       "#fafaf8",
   white:    "#ffffff",
   border:   "#e2e8f0",
-  text:     "#1a202c",
+  text:     "#1a202c", 
   muted:    "#718096",
   dim:      "#a0aec0",
   inputBg:  "#edf2f7",
@@ -80,17 +82,21 @@ const css = {
   /* Empty */
   empty:      { textAlign: "center", padding: "4rem 2rem" },
   emptyTitle: { fontSize: "16px", fontWeight: "600", color: color.muted, marginBottom: "6px" },
-  emptyText:  { fontSize: "14px", color: color.dim },
+  emptyText:  { fontSize: "14px", color:  color.dim },
 
   /* Flash */
   flash: { marginTop: "10px", fontSize: "13px", color: color.green, textAlign: "center" },
 };
 
 /*HELPERS*/
+//Unique id generator for budgets and expenses
 const makeId    = () => Date.now().toString(36) + Math.random().toString(36).slice(2);
+
 const todayStr  = () => new Date().toISOString().slice(0, 10);
 const nowTime   = () => new Date().toTimeString().slice(0, 5);
+//number formatter
 const fmt       = (n) => isNaN(parseFloat(n)) ? "—" : parseFloat(n).toLocaleString("en-GH", { minimumFractionDigits: 2 });
+//date fo
 const fmtDate   = (d) => d ? new Date(d + "T00:00:00").toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" }) : "—";
 
 /* A budget is ACTIVE if it was created within the last 24 hours */
@@ -109,13 +115,13 @@ const BLANK_BUDGET = {
 /* ============================================================
    ROOT APP
    ============================================================ */
-export default function DailyBudgetApp() {
+export default function DailyBIudgetApp() {
   const [budgets,    setBudgets]    = useState([]);
   const [view,       setView]       = useState("main");    // "main" | "detail"
   const [tab,        setTab]        = useState("history"); // "history" | "add"
   const [activeId,   setActiveId]   = useState(null);
 
-  /* Add a new budget */
+  /* To add a new budget */
   const addBudget = (form) => {
     const budget = {
       ...form,
@@ -127,7 +133,7 @@ export default function DailyBudgetApp() {
     setTab("history");
   };
 
-  /* Add an expense to a budget */
+  /*  To add an expense to a budget */
   const addExpense = (budgetId, expense) => {
     setBudgets(prev => prev.map(b => {
       if (b.id !== budgetId) return b;
@@ -150,7 +156,7 @@ export default function DailyBudgetApp() {
     <div style={css.page}>
       <div style={css.header}>
         <div style={css.headerTop}>
-          <h1 style={css.title}>💰 Daily Budget</h1>
+          <h1 style={css.title}><FontAwesomeIcon icon={faWallet}/>Daily Budget</h1>
         </div>
         <div style={css.tabBar}>
           {[["history", "History"], ["add", "Add Budget"]].map(([k, v]) => (

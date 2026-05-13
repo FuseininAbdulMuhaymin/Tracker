@@ -1,6 +1,7 @@
 // src/pages/Landing.jsx
 
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 /* ============================================================
@@ -520,10 +521,10 @@ export default function Landing() {
       <div className="stats-strip">
 
         {[
-          { number: "4",      label: "Finance tools"    },
-          { number: "100%",   label: "Private & local"  },
-          { number: "Free",   label: "No cost ever"     },
-          { number: "AI",     label: "Powered advice"   },
+          { number: "4", label: "Finance tools" },
+          { number: "100%", label: "Private & local" },
+          { number: "Free", label: "No cost ever" },
+          { number: "AI", label: "Powered advice" },
         ].map((s) => (
           <div className="stat-item" key={s.label}>
             <div className="stat-number">{s.number}</div>
@@ -579,9 +580,9 @@ export default function Landing() {
 
                 {/* Saving goal rows */}
                 {[
-                  { label: "New Phone",     sub: "Monthly · Cash",  amount: "GH₵ 850",  pct: 72, color: "#6d28d9" },
-                  { label: "Holiday Trip",  sub: "Weekly · Mobile", amount: "GH₵ 1,200", pct: 45, color: "#9333ea" },
-                  { label: "Emergency Fund",sub: "Daily · Cash",    amount: "GH₵ 500",  pct: 30, color: "#a855f7" },
+                  { label: "New Phone", sub: "Monthly · Cash", amount: "GH₵ 850", pct: 72, color: "#6d28d9" },
+                  { label: "Holiday Trip", sub: "Weekly · Mobile", amount: "GH₵ 1,200", pct: 45, color: "#9333ea" },
+                  { label: "Emergency Fund", sub: "Daily · Cash", amount: "GH₵ 500", pct: 30, color: "#a855f7" },
                 ].map((item) => (
                   <div className="mock-row" key={item.label}>
                     <div className="mock-row-left">
@@ -652,9 +653,9 @@ export default function Landing() {
                   gap: "10px", marginBottom: "6px",
                 }}>
                   {[
-                    { label: "Budget", val: "GH₵ 200", color: "#1a202c"  },
-                    { label: "Spent",  val: "GH₵ 135", color: "#9b2c2c"  },
-                    { label: "Left",   val: "GH₵ 65",  color: "#276749"  },
+                    { label: "Budget", val: "GH₵ 200", color: "#1a202c" },
+                    { label: "Spent", val: "GH₵ 135", color: "#9b2c2c" },
+                    { label: "Left", val: "GH₵ 65", color: "#276749" },
                   ].map((s) => (
                     <div key={s.label} style={{
                       background: "#ffffff", border: "1px solid #e2e8f0",
@@ -668,8 +669,8 @@ export default function Landing() {
 
                 {/* Expense rows */}
                 {[
-                  { item: "Lunch",     desc: "Rice and stew",  amount: "− GH₵ 25" },
-                  { item: "Taxi",      desc: "To work",        amount: "− GH₵ 40" },
+                  { item: "Lunch", desc: "Rice and stew", amount: "− GH₵ 25" },
+                  { item: "Taxi", desc: "To work", amount: "− GH₵ 40" },
                   { item: "Groceries", desc: "Evening market", amount: "− GH₵ 70" },
                 ].map((e) => (
                   <div className="mock-row" key={e.item}>
@@ -735,9 +736,9 @@ export default function Landing() {
                   gap: "10px", marginBottom: "6px",
                 }}>
                   {[
-                    { label: "Income",  val: "GH₵ 1,800", color: "#276749" },
-                    { label: "Expense", val: "GH₵ 960",   color: "#9b2c2c" },
-                    { label: "Balance", val: "GH₵ 840",   color: "#2b6cb0" },
+                    { label: "Income", val: "GH₵ 1,800", color: "#276749" },
+                    { label: "Expense", val: "GH₵ 960", color: "#9b2c2c" },
+                    { label: "Balance", val: "GH₵ 840", color: "#2b6cb0" },
                   ].map((s) => (
                     <div key={s.label} style={{
                       background: "#ffffff", border: "1px solid #e2e8f0",
@@ -751,9 +752,9 @@ export default function Landing() {
 
                 {/* Transaction rows */}
                 {[
-                  { icon: "fas fa-arrow-up",   label: "Salary",         sub: "Income · Today",      amount: "+ GH₵ 1,800", color: "#276749", iconBg: "#c6f6d5" },
-                  { icon: "fas fa-arrow-down",  label: "Rent",           sub: "Expense · Yesterday", amount: "− GH₵ 600",  color: "#9b2c2c", iconBg: "#fed7d7" },
-                  { icon: "fas fa-arrow-down",  label: "Electricity",    sub: "Expense · Yesterday", amount: "− GH₵ 120",  color: "#9b2c2c", iconBg: "#fed7d7" },
+                  { icon: "fas fa-arrow-up", label: "Salary", sub: "Income · Today", amount: "+ GH₵ 1,800", color: "#276749", iconBg: "#c6f6d5" },
+                  { icon: "fas fa-arrow-down", label: "Rent", sub: "Expense · Yesterday", amount: "− GH₵ 600", color: "#9b2c2c", iconBg: "#fed7d7" },
+                  { icon: "fas fa-arrow-down", label: "Electricity", sub: "Expense · Yesterday", amount: "− GH₵ 120", color: "#9b2c2c", iconBg: "#fed7d7" },
                 ].map((t) => (
                   <div className="mock-row" key={t.label}>
                     <div className="mock-row-left">
@@ -819,23 +820,23 @@ export default function Landing() {
 
                 {/* Chat bubbles */}
                 {[
-                  { from: "ai",   text: "Hi! Ask me anything about your money. I am here to help 💰" },
+                  { from: "ai", text: "Hi! Ask me anything about your money. I am here to help 💰" },
                   { from: "user", text: "How do I save GH₵500 a month?" },
-                  { from: "ai",   text: "Start by tracking all expenses this week. Then cut the top 2 non-essential spending areas. Automate a transfer on pay day so savings happen first 💡" },
+                  { from: "ai", text: "Start by tracking all expenses this week. Then cut the top 2 non-essential spending areas. Automate a transfer on pay day so savings happen first 💡" },
                 ].map((m, i) => (
                   <div key={i} style={{
-                    display:        "flex",
+                    display: "flex",
                     justifyContent: m.from === "user" ? "flex-end" : "flex-start",
                   }}>
                     <div style={{
-                      maxWidth:     "78%",
-                      padding:      "10px 14px",
+                      maxWidth: "78%",
+                      padding: "10px 14px",
                       borderRadius: m.from === "user" ? "16px 16px 4px 16px" : "16px 16px 16px 4px",
-                      background:   m.from === "user" ? "#1a202c" : "#ffffff",
-                      color:        m.from === "user" ? "#ffffff" : "#1a202c",
-                      fontSize:     "12px",
-                      lineHeight:   "1.55",
-                      border:       m.from === "ai" ? "1px solid #e2e8f0" : "none",
+                      background: m.from === "user" ? "#1a202c" : "#ffffff",
+                      color: m.from === "user" ? "#ffffff" : "#1a202c",
+                      fontSize: "12px",
+                      lineHeight: "1.55",
+                      border: m.from === "ai" ? "1px solid #e2e8f0" : "none",
                     }}>
                       {m.text}
                     </div>
@@ -844,14 +845,14 @@ export default function Landing() {
 
                 {/* Fake input bar */}
                 <div style={{
-                  display:      "flex",
-                  gap:          "8px",
-                  marginTop:    "6px",
-                  background:   "#ffffff",
-                  border:       "1px solid #e2e8f0",
+                  display: "flex",
+                  gap: "8px",
+                  marginTop: "6px",
+                  background: "#ffffff",
+                  border: "1px solid #e2e8f0",
                   borderRadius: "10px",
-                  padding:      "8px 12px",
-                  alignItems:   "center",
+                  padding: "8px 12px",
+                  alignItems: "center",
                 }}>
                   <span style={{ fontSize: "12px", color: "#a0aec0", flex: 1 }}>
                     Ask a finance question...
