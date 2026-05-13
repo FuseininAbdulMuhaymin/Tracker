@@ -96,7 +96,7 @@ const todayStr  = () => new Date().toISOString().slice(0, 10);
 const nowTime   = () => new Date().toTimeString().slice(0, 5);
 //number formatter
 const fmt       = (n) => isNaN(parseFloat(n)) ? "—" : parseFloat(n).toLocaleString("en-GH", { minimumFractionDigits: 2 });
-//date fo
+// date format
 const fmtDate   = (d) => d ? new Date(d + "T00:00:00").toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" }) : "—";
 
 /* A budget is ACTIVE if it was created within the last 24 hours */
@@ -115,7 +115,7 @@ const BLANK_BUDGET = {
 /* ============================================================
    ROOT APP
    ============================================================ */
-export default function DailyBIudgetApp() {
+export default function DailyBudgetApp() {
   const [budgets,    setBudgets]    = useState([]);
   const [view,       setView]       = useState("main");    // "main" | "detail"
   const [tab,        setTab]        = useState("history"); // "history" | "add"
